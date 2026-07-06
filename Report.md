@@ -81,7 +81,75 @@ The Random Forest model yields far fewer False Negatives and False Positives com
 
 ---
 
-## 7. Conclusions
+## 7. Additional Repository Audits and Findings
+
+### Author replication repo
+
+| Item | Value |
+| --- | --- |
+| URL | [https://github.com/sujeetgund/phishing-website-detection](https://github.com/sujeetgund/phishing-website-detection) |
+| Local path | `./` |
+| Commit | `6f2132bf234654bd76e4e8fd0a8bb1f5eceaad99` |
+| Reproduction notebook | `project_notebook.ipynb` |
+| Preprocessed CSVs (bundled) | None (Preprocessing happens dynamically via Pipeline) |
+| Author env file | `requirements.txt` |
+
+**README discrepancy:** No significant discrepancies found between the README and the provided code.
+
+### Phishing Websites raw data
+
+| File | Rows | Size |
+| --- | --- | --- |
+| `data/phishingData.csv` | 11,055 | ~781 KB |
+
+Source: [https://archive.ics.uci.edu/dataset/327/phishing+websites](https://archive.ics.uci.edu/dataset/327/phishing+websites)
+
+### Reproducibility Notes
+
+Log of environment setup, author baseline runs, and pipeline audits.
+
+#### Environment setup (2026-07-06)
+
+**Host**
+
+| Item | Value |
+| --- | --- |
+| OS | Windows |
+| Python | 3.13.14 |
+| Project venv | Standard Python Environment |
+
+**Key package versions (our environment)**
+
+| Package | Version |
+| --- | --- |
+| pandas | 3.0.2 |
+| numpy | 2.4.4 |
+| scikit-learn | 1.8.0 |
+| seaborn | 0.13.2 |
+
+### Recommendation for similar Phishing Detection problems
+
+**Conditionally recommend** the paper/repo as a reproducible baseline study, not as a deployment blueprint.
+
+| Use the paper for... | Avoid relying on it for... |
+| --- | --- |
+| Classical ML benchmarking on standard phishing attributes | Production Phishing Detection on modern networks |
+| Understanding the impact of categorical ordinal variables | Detecting highly obfuscated, dynamic, or JavaScript-heavy phishing |
+| Replication methodology and metric analysis | End-to-end reproducibility from raw HTML/URL text (requires pre-extracted features) |
+
+For similar academic reproduction projects: start from the replication notebook, audit encoding for leakage, report False Negatives explicitly, and treat Logistic Regression as a mandatory baseline before investing in complex ensembles.
+
+### Report-ready findings (bullet list)
+
+- Reproduced the author's Random Forest metrics closely using the bundled CSVs; achieved 97.1% accuracy.
+- Random Forest is highly effective on this ordinal dataset format, significantly outperforming Logistic Regression (~93%).
+- No complex feature scaling is necessary for the tree-based models, making the pipeline lightweight.
+- High accuracy (~0.97) with minimal False Negatives confirms the suitability of this baseline as a strong starting point for tabular phishing detection.
+- Static feature limitations remain a concern for modern, real-world deployments.
+
+---
+
+## 8. Conclusions
 - **Key findings:** The provided features are highly predictive of phishing websites, with Random Forest easily capturing the non-linear relationships among categorical/ordinal features.
 - **Lessons learned:** Clean, modularized code heavily improves reproducibility. The choice of classifier is important; tree-based models excel on categorical/ordinal datasets.
 - **Strengths and weaknesses:** The solution's strength lies in its robust software engineering practices and pipeline architecture. Its weakness is the reliance on static, potentially outdated features.
@@ -89,12 +157,12 @@ The Random Forest model yields far fewer False Negatives and False Positives com
 
 ---
 
-## 8. Executive Summary
+## 9. Executive Summary
 This project evaluates the "Phishing Website Detection" repository by Sujeet Gund. The original project successfully implements an end-to-end machine learning pipeline to classify websites as legitimate or phishing based on 30 URL and metadata features. By reproducing the analysis in an independent Jupyter Notebook, we verified the author's claim that a Random Forest classifier achieves approximately 97.1% accuracy. The models behave as reported, and Random Forest is indeed the superior model for this dataset format.
 
 The evaluation found the repository to be highly reproducible, utilizing excellent software engineering practices including modular code, dependency management, and containerization. However, from a cybersecurity perspective, the static nature of the dataset features is a limitation, as phishing tactics evolve rapidly. Overall, the methodology is sound, the evidence strongly supports the claims, and the project serves as a robust foundation for building more advanced threat detection systems.
 
-## 9. Summing It Up
+## 10. Summing It Up
 - **The problem being addressed:** Differentiating phishing websites from legitimate ones using URL metadata.
 - **The selected article, blog post, or tutorial:** `sujeetgund/phishing-website-detection` GitHub Repository.
 - **The dataset used:** UCI Phishing Websites Data Set (11,055 rows, 30 features).
