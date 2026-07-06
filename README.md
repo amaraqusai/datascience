@@ -1,5 +1,13 @@
 # PhishDetector: End-to-End Phishing Website Detection System
 
+> **Final Project — Data Science in Cyber**
+> 
+> **Project Description**: This repository serves as the final project submission for the Data Science in Cyber course. It evaluates and reproduces the `phishing-website-detection` repository.
+> 
+> **Original GitHub Repository / Selected Source**: [sujeetgund/phishing-website-detection](https://github.com/sujeetgund/phishing-website-detection)
+>
+> The reproduction code, models, and evaluation report can be found in `project_notebook.ipynb` and `Report.pdf`.
+
 [![Python](https://img.shields.io/badge/python-3.10%2B-blue)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![GitHub last commit](https://img.shields.io/github/last-commit/sujeetgund/phishing-website-detection)](https://github.com/sujeetgund/phishing-website-detection/commits/main)
