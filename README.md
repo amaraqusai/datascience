@@ -1,12 +1,24 @@
 # PhishDetector: End-to-End Phishing Website Detection System
 
-> **Final Project — Data Science in Cyber**
-> 
-> **Project Description**: This repository serves as the final project submission for the Data Science in Cyber course. It evaluates and reproduces the `phishing-website-detection` repository.
-> 
-> **Original GitHub Repository / Selected Source**: [sujeetgund/phishing-website-detection](https://github.com/sujeetgund/phishing-website-detection)
->
-> The reproduction code, models, and evaluation report can be found in `project_notebook.ipynb` and `Report.pdf`.
+## 🎓 Final Project Submission
+
+This repository serves as the final project submission for the **Data Science in Cyber** course.
+
+- **Project Description**: This project evaluates and reproduces an end-to-end machine learning solution designed to detect phishing websites using URL and metadata features. We verified the original author's claims that a Random Forest Classifier is optimal for this specific tabular dataset format, achieving ~97.1% accuracy, and conducted our own Exploratory Data Analysis, Feature Engineering Analysis, and Error Analysis.
+- **Link to the Selected Source / Original GitHub Repository**: [sujeetgund/phishing-website-detection](https://github.com/sujeetgund/phishing-website-detection)
+- **Dataset Source**: [UCI Machine Learning Repository - Phishing Websites Data Set](https://archive.ics.uci.edu/dataset/327/phishing+websites)
+- **Execution Instructions**: 
+  1. Ensure you have Python installed.
+  2. Install dependencies: `pip install -r requirements.txt`
+  3. To execute the reproduction notebook: Run `project_notebook.ipynb` in Jupyter Notebook, VS Code, or Google Colab.
+  4. (Optional) To run the original API server: `uvicorn run_api:app`
+
+The required files for this submission are located in the root of this repository:
+- 📄 **PDF report**: `Report.pdf`
+- 📓 **Python notebook**: `project_notebook.ipynb`
+- 📁 **Supporting code**: `generate_plots.py` and the `src/` directory.
+
+---
 
 [![Python](https://img.shields.io/badge/python-3.10%2B-blue)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
