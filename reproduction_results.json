@@ -1,0 +1,37 @@
+{
+  "RandomForest": {
+    "our_mean": 0.9684,
+    "our_std": 0.0151,
+    "author_mean": 0.9711,
+    "author_std": 0.0041,
+    "delta": 0.0027
+  },
+  "SVC": {
+    "our_mean": 0.948,
+    "our_std": 0.0067,
+    "author_mean": 0.9629,
+    "author_std": 0.0064,
+    "delta": 0.0149
+  },
+  "KNeighbors": {
+    "our_mean": 0.9412,
+    "our_std": 0.0135,
+    "author_mean": 0.9623,
+    "author_std": 0.0046,
+    "delta": 0.0211
+  },
+  "Logistic": {
+    "our_mean": 0.9225,
+    "our_std": 0.005,
+    "author_mean": 0.927,
+    "author_std": 0.0047,
+    "delta": 0.0045
+  },
+  "Ridge": {
+    "our_mean": 0.9192,
+    "our_std": 0.0069,
+    "author_mean": 0.9206,
+    "author_std": 0.0053,
+    "delta": 0.0014
+  }
+}
